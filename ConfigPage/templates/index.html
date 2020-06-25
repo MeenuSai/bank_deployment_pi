@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>OceanNet Home Page</title>
+<title>Leela Bank Home Page</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -53,7 +53,7 @@ div#loading {
   </a>
   <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
     <i class="fa fa-envelope w3-xxlarge"></i>
-    <p>Dat Book</p>
+    <p>Day Book</p>
 	</a>
   <a href="/logout" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
     <i class="fa fa-sign-out w3-xxlarge"></i>
@@ -94,7 +94,7 @@ div#loading {
 <script>
 !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
 </script>
- --><img src="static/images/sai.jpeg" alt="logo" class="w3-image" width="100%" height="100%">
+ --><img src="static/images/sai.jpeg" alt="logo" class="w3-image" width="70%" height="50%">
 
   </header>
 
@@ -102,28 +102,13 @@ div#loading {
   <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="details">
     <h2 class="w3-text-light-grey">User Configurations</h2>
     <hr style="width:200px" class="w3-opacity">
-    <p><b>NOTE: To ensure proper agency compliance and compatibility between similar products in your area, the operating channel and region must be set correctly. </b> <br>
-
-	 <b>Placement of the Router to Optimize Wireless Connectivity.</b><br>
-	 The operating distance or range of your wireless connection can vary significantly based on the physical placement of the router. For best results, place your router:
-    <ul>
-		  <li>In an elevated location such as a dock area.</li>
-		  <li>Away from potential sources of interference, such as Inverters, Ham Radios, and other sea phones.</li>
-		  <li>Away from large metal surfaces. </li>
-		  <li>Protect from water ingress and moisture. </li>
-    </ul>
-		<b>Note: Failure to follow these guidelines can result in significant performance degradation or inability to wirelessly connect to the router.</b>
-    </p>
-
     <div class="w3-row-padding" style="margin:0 -10px" align="left">
     <div class="w3-half w3-margin-bottom">
     <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-    <li class="w3-dark-grey w3-xlarge w3-padding-32">Initial Configurations</li>
-    <li class="w3-light-grey w3-padding-24">
-<!-- 	    (Register <a href ="oceannet.amrita.edu" here </a> before updating new devices) -->
+
     <form action="/details" method="POST">
     <input type="text" name="name" value="Enter customer name"><br>
-    <input type="INTEGER" name="mobile number" value="Enter phone number"><br>
+    <input type="INTEGER" name="mobile_number" value="Enter phone number"><br>
     
     <br><input type="submit" value="Save">
     </form>
