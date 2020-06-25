@@ -19,7 +19,7 @@ def mainPage():
 
 @app.route('/login', methods=['POST'])
 def do_admin_login():
-    if request.form['password'] == 'admin' and request.form['username'] == 'admin':
+    if request.form['password'] == 'babu' and request.form['username'] == 'sheeba99':
         session['logged_in'] = True
         return redirect(url_for('mainPage'))
     else:
