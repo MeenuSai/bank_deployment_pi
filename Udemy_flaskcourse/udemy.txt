@@ -1,0 +1,10 @@
+open .
+python3 -m venv venv
+atom app.py
+source venv/bin/activate
+
+
+
+
+
+No space in naming url (LeelaBankers)

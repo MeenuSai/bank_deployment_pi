@@ -1,0 +1,28 @@
+<!doctype html>
+<head>
+    <title>Leela Bankers, Babu S N, Sheeba </title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+</head>
+<h1>SAIRAM ShraddhaSaburi</h1>
+<body class="main">
+
+  <div>
+    <p>Enter your name:</p>
+    <form class="pure-form" method="POST" action="/login">
+    Name:<br>
+    <input type="text" name="username"><br>
+    Account Number:<br>
+    <input type="text" name="userAccNo"><br>
+    <button type="submit"  class="pure-button pure-button-primary" value="Submit">Submit</button>
+    </form>
+  </div>
+  <br>
+  <div>
+    {% if name %}
+    <p>Welcome to my site {{name}}!</p>
+    <p>Account Number Matched!!!</p>
+    {% endif %}
+  </div>
+
+</body>

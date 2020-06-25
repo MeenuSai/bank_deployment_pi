@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<title>OceanNet Home Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script type="text/javascript">// <![CDATA[
+        function loading(){
+            $("#loading").show();
+            $("#content").hide();       
+        }
+// ]]></script>
+
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: #222;}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {margin-left: 120px}
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) { #main {margin-left: 0} }
+
+div#loading {
+    width: 35px;
+    height: 35px;
+    display: none;
+    background: url(/static/images/loader.gif) no-repeat;
+    cursor: wait;
+    }
+
+</style>
+<body class="w3-black">
+
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <!-- Avatar image in top left corner -->
+  <img src="static/images/logo2.png" style="width:100%">
+  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+    <i class="fa fa-home w3-xxlarge"></i>
+    <p>Home</p>
+  </a>
+  <a href="#configs" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-cog w3-xxlarge"></i>
+    <p>Settings</p>
+  </a>
+  <a href="#manual" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-book w3-xxlarge"></i>
+    <p>User Manual</p>
+  </a>
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-envelope w3-xxlarge"></i>
+    <p>Service Contact</p>
+	</a>
+  <a href="/logout" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-sign-out w3-xxlarge"></i>
+    <p>Logout</p>
+  </a>
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <a href="#" class="w3-bar-item w3-button" style="width:25% !important">Home</a>
+    <a href="#configs" class="w3-bar-item w3-button" style="width:25% !important">Settings</a>
+    <a href="#manual" class="w3-bar-item w3-button" style="width:25% !important">Manual</a>
+    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">Contact</a>
+    <a href="/logout" class="w3-bar-item w3-button" style="width:25% !important">Logout</a>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+  <!-- Header/Home -->
+  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+    <!-- <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span> John Doe.</h1>
+    <p>Photographer and Web Designer.</p> -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+   
+    {% for category, message in messages %}
+    
+      <br><br>
+      <font color="red"><h1>
+      {{ message }} <h1></font>
+    {% endfor %}
+    <!-- </ul> -->
+    {% endif %}
+    {% endwith %}
+<!-- <a class="weatherwidget-io" href="https://forecast7.com/en/10d8576d27/kerala/" data-label_1="KERALA" data-label_2="WEATHER" data-font="Open Sans" data-icons="Climacons Animated" data-days="5" data-theme="random_grey" >KERALA WEATHER</a>
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+</script>
+ --><img src="static/images/logo.png" alt="logo" class="w3-image" width="100%" height="100%">
+
+  </header>
+
+  <!-- Settings Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="configs">
+    <h2 class="w3-text-light-grey">User Configurations</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <p><b>NOTE: To ensure proper agency compliance and compatibility between similar products in your area, the operating channel and region must be set correctly. </b> <br>
+
+	 <b>Placement of the Router to Optimize Wireless Connectivity.</b><br>
+	 The operating distance or range of your wireless connection can vary significantly based on the physical placement of the router. For best results, place your router:
+    <ul>
+		  <li>In an elevated location such as a dock area.</li>
+		  <li>Away from potential sources of interference, such as Inverters, Ham Radios, and other sea phones.</li>
+		  <li>Away from large metal surfaces. </li>
+		  <li>Protect from water ingress and moisture. </li>
+    </ul>
+		<b>Note: Failure to follow these guidelines can result in significant performance degradation or inability to wirelessly connect to the router.</b>
+    </p>
+    
+    
+	
+	
+    <h3 class="w3-padding-16 w3-text-light-grey"> Proceed with caution. Changing this setting may render permanent damage to the device. </h3>
+    <h3 class="w3-padding-16 w3-text-light-grey">Device IP Settings</h3>
+    <div class="w3-row-padding" style="margin:0 -10px" align="left">
+    <div class="w3-half w3-margin-bottom">
+    <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+    <li class="w3-dark-grey w3-xlarge w3-padding-32">Initial Configurations</li>
+    <li class="w3-light-grey w3-padding-24">
+<!-- 	    (Register <a href ="oceannet.amrita.edu" here </a> before updating new devices) -->
+    <form action="/configIP" method="POST">
+    <input type="text" name="CPEIP" value="Enter CPE IP Address"><br>
+    <input type="text" name="boatName" value="Enter Boat Name (ssid to match webpage)"><br>
+    
+    <br><input type="submit" value="Save">
+    </form>
+    
+  </ul>
+</div>
+</div>
+  <!-- End About Section -->
+    </div>
+  
+    <div class="w3-row-padding" style="margin:0 15px">
+      <h3 class="w3-padding-16 w3-text-light-grey">System Diagnosis</h3>
+      <div class="w3-half w3-margin-bottom">
+        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-dark-grey w3-xlarge w3-padding-32">Automatic Antenna Rotator Test</li>
+   
+            <li class="w3-light-grey w3-padding-24">
+            <form action="/AARTest" method="POST">
+          
+              <br><input class="w3-button w3-white w3-padding-large w3-hover-black" type="submit" value="Proceed">
+              </form> 
+          </li>
+        </ul>
+      </div>
+      <div class="w3-half">
+        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-dark-grey w3-xlarge w3-padding-32">Notification LED Test</li>
+          <li class="w3-light-grey w3-padding-24">
+            <form action="/LEDTest" method="POST">            
+              <br><input class="w3-button w3-white w3-padding-large w3-hover-black" type="submit" value="Proceed">
+              </form>  
+          </li>
+        </ul>
+      </div>
+    <!-- End Grid/Pricing tables -->
+    </div>
+
+    <div class="w3-row-padding" style="margin:0 15px">
+      <h3 class="w3-padding-16 w3-text-light-grey">System Update & Reboot</h3>
+      <div class="w3-half w3-margin-bottom">
+        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-dark-grey w3-xlarge w3-padding-32">Software Update</li>
+   
+            <li class="w3-light-grey w3-padding-24">
+            <form action="/update" method="POST">
+          
+              <br><input class="w3-button w3-white w3-padding-large w3-hover-black" type="submit" value="Check for Update">
+              </form> 
+          </li>
+        </ul>
+      </div>
+      <div class="w3-half">
+        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-dark-grey w3-xlarge w3-padding-32">System Reboot</li>
+          <li class="w3-light-grey w3-padding-24">
+            <form action="/reboot" method="POST">            
+              <br><input class="w3-button w3-white w3-padding-large w3-hover-black" type="submit" value="Reboot">
+              </form>  
+          </li>
+        </ul>
+      </div>
+    <!-- End Grid/Pricing tables -->
+    </div>
+
+  <!-- User Manual Section -->
+  <div class="w3-padding-64 w3-content" id="manual">
+    <h2 class="w3-text-light-grey">User Manual</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <div class="w3-row-padding" style="margin:0 -16px">
+    <iframe src="static/manual.pdf" width="100%" height="500px">
+    </iframe>
+    </div>
+	
+  <!-- End Portfolio Section -->
+  </div>
+
+  <!-- Contact Section -->
+  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+    <h2 class="w3-text-light-grey">Contact Us</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <div class="w3-section">
+      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Amritapuri, Kollam, Kerala</p>
+      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +91 476 2804141</p>
+      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: oceannet@amrita.edu</p>
+    </div><br>
+    <p> Send us a message:</p>
+	<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSffvhRjUWSJALrQL_OsFoFQjSEsNIgoIUd8SUQPARDEsB7goA/viewform?embedded=true" width="100%" height="812" frameborder="0" marginheight="0" marginwidth="0">Loading…
+	</iframe>
+    
+  <!-- End Contact Section -->
+  </div>
+  
+    <!-- Footer -->
+  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+  	<p class="w3-medium"> &copy; Amrita OceanNet 2019 </p>
+    <!-- <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+    <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p> -->
+   
+  </footer>
+<!-- End footer -->
+<!-- END PAGE CONTENT -->
+</div>
+
+</body>
+</html>
+
