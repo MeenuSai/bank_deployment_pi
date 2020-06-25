@@ -40,8 +40,9 @@ def details():
     cus_phno = request.form['mobile_number']
 
     data={'name':cus_name,'mobile_number':cus_phno}    
-    
+    print("Details")
     try:
+        print("Got data")
         conn =pymysql.connect(database="bank",user="admin",password="admin",host="localhost")
         cur=conn.cursor()
         cur.execute("INSERT INTO personal_details (name, ph.no) VALUES (%(name)s, %(mobile_number)s);",data)
