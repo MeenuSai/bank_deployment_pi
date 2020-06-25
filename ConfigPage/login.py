@@ -47,9 +47,8 @@ def details():
     print("Got data")
     conn =pymysql.connect(database="bank",user="admin",password="admin",host="localhost")
     cur=conn.cursor()
-    cur.execute("INSERT INTO personal_details (name, ph) VALUES (%(name)s, %(mobile_number)s) ;",data)
-    cur.execute("INSERT INTO personal_details (weight) VALUES ( %(weight)s);",data)
-    conn.commit()
+    cur.execute("INSERT INTO personal_details (name, ph,weight) VALUES (%(name)s, %(mobile_number)s), %(weight)s);",data)
+     conn.commit()
     conn.close()
     flash('Saved Successfully')
     #except:
