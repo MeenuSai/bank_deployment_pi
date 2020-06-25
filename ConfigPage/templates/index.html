@@ -38,22 +38,22 @@ div#loading {
 <!-- Icon Bar (Sidebar - hidden on small screens) -->
 <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
   <!-- Avatar image in top left corner -->
-  <img src="static/images/logo2.png" style="width:100%">
+  <img src="static/images/sai.jpeg" style="width:100%">
   <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
     <i class="fa fa-home w3-xxlarge"></i>
     <p>Home</p>
   </a>
   <a href="#configs" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
     <i class="fa fa-cog w3-xxlarge"></i>
-    <p>Settings</p>
+    <p>New Gold Loan</p>
   </a>
   <a href="#manual" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
     <i class="fa fa-book w3-xxlarge"></i>
-    <p>User Manual</p>
+    <p>All Customer</p>
   </a>
   <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
     <i class="fa fa-envelope w3-xxlarge"></i>
-    <p>Service Contact</p>
+    <p>Dat Book</p>
 	</a>
   <a href="/logout" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
     <i class="fa fa-sign-out w3-xxlarge"></i>
@@ -65,9 +65,9 @@ div#loading {
 <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
   <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
     <a href="#" class="w3-bar-item w3-button" style="width:25% !important">Home</a>
-    <a href="#configs" class="w3-bar-item w3-button" style="width:25% !important">Settings</a>
-    <a href="#manual" class="w3-bar-item w3-button" style="width:25% !important">Manual</a>
-    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">Contact</a>
+    <a href="#configs" class="w3-bar-item w3-button" style="width:25% !important">New Gold Loan</a>
+    <a href="#manual" class="w3-bar-item w3-button" style="width:25% !important">All Customer</a>
+    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">Day Book</a>
     <a href="/logout" class="w3-bar-item w3-button" style="width:25% !important">Logout</a>
   </div>
 </div>
@@ -94,12 +94,12 @@ div#loading {
 <script>
 !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
 </script>
- --><img src="static/images/logo.png" alt="logo" class="w3-image" width="100%" height="100%">
+ --><img src="static/images/sai.jpeg" alt="logo" class="w3-image" width="100%" height="100%">
 
   </header>
 
   <!-- Settings Section -->
-  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="configs">
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="details">
     <h2 class="w3-text-light-grey">User Configurations</h2>
     <hr style="width:200px" class="w3-opacity">
     <p><b>NOTE: To ensure proper agency compliance and compatibility between similar products in your area, the operating channel and region must be set correctly. </b> <br>
@@ -114,21 +114,16 @@ div#loading {
     </ul>
 		<b>Note: Failure to follow these guidelines can result in significant performance degradation or inability to wirelessly connect to the router.</b>
     </p>
-    
-    
-	
-	
-    <h3 class="w3-padding-16 w3-text-light-grey"> Proceed with caution. Changing this setting may render permanent damage to the device. </h3>
-    <h3 class="w3-padding-16 w3-text-light-grey">Device IP Settings</h3>
+
     <div class="w3-row-padding" style="margin:0 -10px" align="left">
     <div class="w3-half w3-margin-bottom">
     <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
     <li class="w3-dark-grey w3-xlarge w3-padding-32">Initial Configurations</li>
     <li class="w3-light-grey w3-padding-24">
 <!-- 	    (Register <a href ="oceannet.amrita.edu" here </a> before updating new devices) -->
-    <form action="/configIP" method="POST">
-    <input type="text" name="CPEIP" value="Enter CPE IP Address"><br>
-    <input type="text" name="boatName" value="Enter Boat Name (ssid to match webpage)"><br>
+    <form action="/details" method="POST">
+    <input type="text" name="name" value="Enter customer name"><br>
+    <input type="INTEGER" name="mobile number" value="Enter phone number"><br>
     
     <br><input type="submit" value="Save">
     </form>
