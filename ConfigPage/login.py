@@ -51,7 +51,7 @@ def details():
     flash('Saved Successfully')
     #except:
     #   flash('Error Saving Configurations')
-    return redirect(url_for('mainPage#details'))
+    return redirect(url_for('mainPage'))
 
 if __name__ == "__main__":
     app.secret_key = os.urandom(12)
