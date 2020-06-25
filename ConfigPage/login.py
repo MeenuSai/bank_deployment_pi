@@ -51,7 +51,7 @@ def details():
         conn.close()
         flash('Saved Successfully')
     except:
-    ee   flash('Error Saving Configurations')
+       flash('Error Saving Configurations')
     return redirect(url_for('mainPage'))
 
 if __name__ == "__main__":
