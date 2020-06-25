@@ -38,7 +38,7 @@ def logout():
 def details():
     cus_name = request.form['name']
     cus_phno = request.form['mobile_number']
-    cus_interest = request.form['weight']
+    cus_interest = (request.form['weight']*3)
 
 
     data={'name':cus_name,'mobile_number':cus_phno,'weight':cus_interest}    
@@ -47,7 +47,7 @@ def details():
     print("Got data")
     conn =pymysql.connect(database="bank",user="admin",password="admin",host="localhost")
     cur=conn.cursor()
-    cur.execute("INSERT INTO personal_details (name, ph,weight) VALUES (%(name)s, %(mobile_number)s), %(weight)s);",data)
+    cur.execute("INSERT INTO personal_details (name, ph, weight) VALUES (%(name)s, %(mobile_number)s, %(weight)s);",data)
     conn.commit()
     conn.close()
     flash('Saved Successfully')
