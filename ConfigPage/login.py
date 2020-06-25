@@ -43,13 +43,13 @@ def details():
 
 
 #     try:
-      data={'name':cus_name,'mobile_number':cus_phno,'weight':cus_interest,'address':cus_address}    
-      conn =pymysql.connect(database="bank",user="admin",password="admin",host="localhost")
-      cur=conn.cursor()
-      cur.execute("INSERT INTO personal_details (name, ph, weight,address) VALUES (%(name)s, %(mobile_number)s, %(weight)s), %(address)s);",data)
-      conn.commit()
-      conn.close()
-      flash('Saved Successfully')
+    data={'name':cus_name,'mobile_number':cus_phno,'weight':cus_interest,'address':cus_address}    
+    conn =pymysql.connect(database="bank",user="admin",password="admin",host="localhost")
+    cur=conn.cursor()
+    cur.execute("INSERT INTO personal_details (name, ph, weight,address) VALUES (%(name)s, %(mobile_number)s, %(weight)s), %(address)s);",data)
+    conn.commit()
+    conn.close()
+    flash('Saved Successfully')
 #     except:
 #        flash('Error Saving Configurations')
     return redirect(url_for('mainPage'))
