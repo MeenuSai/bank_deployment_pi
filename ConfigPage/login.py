@@ -19,7 +19,7 @@ def mainPage():
 
 @app.route('/login', methods=['POST'])
 def do_admin_login():
-    if request.form['password'] == 'babu' and request.form['username'] == 'sheeba99':
+    if request.form['password'] == 'sheeba99' and request.form['username'] == 'babu':
         session['logged_in'] = True
         return redirect(url_for('mainPage'))
     else:
@@ -36,14 +36,15 @@ def logout():
 
 @app.route("/details", methods=['GET','POST'])
 def details():
-    boatName = request.form['boatName']
-    data={'cpeIP':cpeIP,'boatName':boatName}    
+    cus_name = request.form['name']
+    cus_phno = request.form['mobile_number']
+
+    data={'name':cus_name,'mobile_number':cus_phno}    
     
     try:
-        conn =pymysql.connect(database="autosys",user="on",password="amma",host="localhost")
+        conn =pymysql.connect(database="bank",user="admin",password="admin",host="localhost")
         cur=conn.cursor()
-        cur.execute("TRUNCATE TABLE boat_data;")
-        cur.execute("INSERT INTO boat_data (ssid, CPE) VALUES (%(boatName)s, %(cpeIP)s);",data)
+        cur.execute("INSERT INTO personal_details (name, ph.no) VALUES (%(cus_name)s, %(cus_phno)s);",data)
         conn.commit()
         conn.close()
         flash('Saved Successfully')
