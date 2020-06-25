@@ -38,7 +38,7 @@ def logout():
 def details():
     cus_name = request.form['name']
     cus_phno = request.form['mobile_number']
-    cus_interest = 3 * (request.form['weight'])
+    cus_interest = request.form['weight']
 
 
     data={'name':cus_name,'mobile_number':cus_phno,'weight':cus_interest}    
