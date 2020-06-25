@@ -36,22 +36,20 @@ def logout():
 
 @app.route("/details", methods=['GET','POST'])
 def details():
-    flash("Details")
-    cus_id = request.form['id']
-    cus_name = request.form['name']
-    data={'cus_id':id,'cus_name':name}
-
+    boatName = request.form['boatName']
+    data={'cpeIP':cpeIP,'boatName':boatName}    
+    
     try:
-        conn =sqlite3.connect('bank_s/w_1.db')
+        conn =pymysql.connect(database="autosys",user="on",password="amma",host="localhost")
         cur=conn.cursor()
-        cur.execute('''INSERT INTO personal_details (id, name) VALUES ( ?, ?)''', ( cus_id,cus_name ) )
+        cur.execute("TRUNCATE TABLE boat_data;")
+        cur.execute("INSERT INTO boat_data (ssid, CPE) VALUES (%(boatName)s, %(cpeIP)s);",data)
         conn.commit()
         conn.close()
         flash('Saved Successfully')
     except:
         flash('Error Saving Configurations')
     return redirect(url_for('mainPage'))
-
 
 if __name__ == "__main__":
     app.secret_key = os.urandom(12)
