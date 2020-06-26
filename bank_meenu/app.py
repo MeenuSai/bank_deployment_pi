@@ -29,6 +29,7 @@ def do_admin_login():
 
 @app.route('/newgoldloan',methods=['GET','POST'])
 def newgoldloan():
+    
     cus_name = request.form['name']
     cus_phno = request.form['mobile_number']
     cus_interest = int(request.form['weight'])*3
@@ -43,7 +44,7 @@ def newgoldloan():
     conn.commit()
     conn.close()
     flash('Saved Successfully')
-    return render_template("newgoldloan")
+    return render_template("mainPage")
 
 
 if __name__ == "__main__":
