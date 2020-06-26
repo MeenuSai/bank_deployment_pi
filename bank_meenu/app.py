@@ -27,7 +27,7 @@ def do_admin_login():
         #return redirect(url_for('home'))
         return home()
 
-@app.route('/newgoldloan',methods=['GET','POST']))
+@app.route('/newgoldloan',methods=['GET','POST'])
 def newgoldloan():
     cus_name = request.form['name']
     cus_phno = request.form['mobile_number']
