@@ -34,18 +34,20 @@ def newgoldloadpage():
         cus_phno = request.form['mobile_number']
         cus_interest = int(request.form['weight'])*3
         cus_address = request.form['address']
+        data={'name':cus_name,'mobile_number':cus_phno,'weight':cus_interest,'address':cus_address}  
+        conn =pymysql.connect(database="bank",user="admin",password="admin",host="localhost")
+        cur=conn.cursor()
+        cur.execute("INSERT INTO personal_details (name, ph, weight,address) VALUES (%(name)s, %(mobile_number)s, %(weight)s, %(address)s);",data)
+        conn.commit()
+        conn.close()
+        flash('Saved Successfully')
         return redirect(url_for('mainPage'))
     else:
         return render_template('newGoldLoan.html')
 
 #     try:
-    data={'name':cus_name,'mobile_number':cus_phno,'weight':cus_interest,'address':cus_address}    
-#     conn =pymysql.connect(database="bank",user="admin",password="admin",host="localhost")
-#     cur=conn.cursor()
-#     cur.execute("INSERT INTO personal_details (name, ph, weight,address) VALUES (%(name)s, %(mobile_number)s, %(weight)s, %(address)s);",data)
-#     conn.commit()
-#     conn.close()
-#     flash('Saved Successfully')
+      
+
     
     return render_template('newGoldLoan.html')
 
