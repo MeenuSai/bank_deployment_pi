@@ -44,35 +44,10 @@ def newgoldloadpage():
         
         entrydate = cur.execute('SELECT entrydate FROM `personal_details` WHERE name="viki"')
                            
-        return redirect(url_for('mainPage'),content = "hello")
+        return redirect(url_for('mainPage'))
     else:
-        return render_template('newGoldLoan.html')
-
-#     try:
-      
-
-    
-    return render_template('newGoldLoan.html')
-
-@app.route('/newgoldloan',methods=['GET','POST'])
-def newgoldloan():
-    
-    cus_name = request.form['name']
-    cus_phno = request.form['mobile_number']
-    cus_interest = int(request.form['weight'])*3
-    cus_address = request.form['address']
-
-
-#     try:
-    data={'name':cus_name,'mobile_number':cus_phno,'weight':cus_interest,'address':cus_address}    
-    conn =pymysql.connect(database="bank",user="admin",password="admin",host="localhost")
-    cur=conn.cursor()
-    cur.execute("INSERT INTO personal_details (name, ph, weight,address) VALUES (%(name)s, %(mobile_number)s, %(weight)s, %(address)s);",data)
-    conn.commit()
-    conn.close()
-    flash('Saved Successfully')
-    return render_template("newgoldloanpage")
-
+        entrydate = cur.execute('SELECT entrydate FROM `personal_details` WHERE name="viki"')
+        return render_template('newGoldLoan.html',content = "hello")
 
 if __name__ == "__main__":
     app.secret_key = os.urandom(12)
