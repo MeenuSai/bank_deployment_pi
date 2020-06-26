@@ -44,7 +44,7 @@ def newgoldloadpage():
         
         entrydate = cur.execute('SELECT entrydate FROM `personal_details` WHERE name="viki"')
                            
-        return redirect(url_for('mainPage'),content = entrydate)
+        return redirect(url_for('mainPage'),content = "hello")
     else:
         return render_template('newGoldLoan.html')
 
