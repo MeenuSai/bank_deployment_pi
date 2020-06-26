@@ -41,12 +41,12 @@ def newgoldloadpage():
         conn.commit()
         conn.close()
         flash('Saved Successfully')
-        
-        entrydate = cur.execute('SELECT entrydate FROM `personal_details` WHERE name="viki"')
-                           
         return redirect(url_for('mainPage'))
     else:
-        entrydate = cur.execute('SELECT entrydate FROM `personal_details` WHERE name="viki"')
+        conn =pymysql.connect(database="bank",user="admin",password="admin",host="localhost")
+        cur=conn.cursor()
+        cur.execute('SELECT entrydate FROM `personal_details` WHERE name="viki"')
+        entrydate=cur.fetchone()
         return render_template('newGoldLoan.html',content = "hello")
 
 if __name__ == "__main__":
