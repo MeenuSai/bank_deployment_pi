@@ -34,7 +34,7 @@ def newgoldloadpage():
         cus_phno = request.form['mobile_number']
         cus_interest = int(request.form['weight'])*3
         cus_address = request.form['address']
-        return redirect(url_for('newgoldloanpage'))
+        return redirect(url_for('mainPage'))
     else:
         return render_template('newGoldLoan.html')
 
