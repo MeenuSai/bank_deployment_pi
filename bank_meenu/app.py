@@ -43,7 +43,7 @@ def newgoldloan():
     conn.commit()
     conn.close()
     flash('Saved Successfully')
-    return render_template("newGoldLoan.html")
+    return render_template("newgoldloan")
 
 
 if __name__ == "__main__":
