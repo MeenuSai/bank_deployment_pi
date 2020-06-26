@@ -26,7 +26,7 @@ def do_admin_login():
         flash('Wrong Password!')
         #return redirect(url_for('home'))
         return home()
-@app.route('/newgoldloanpage'methods=['GET','POST'])
+@app.route('/newgoldloanpage',methods=['GET','POST'])
 def newgoldloadpage():
     cus_name = request.form['name']
     cus_phno = request.form['mobile_number']
