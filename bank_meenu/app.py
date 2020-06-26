@@ -47,7 +47,7 @@ def newgoldloadpage():
         cur=conn.cursor()
         cur.execute('SELECT entrydate FROM `personal_details` WHERE name="viki"')
         entrydate=cur.fetchone()
-        return render_template('newGoldLoan.html',content = "hello")
+        return render_template('newGoldLoan.html',content = entrydate)
 
 if __name__ == "__main__":
     app.secret_key = os.urandom(12)
