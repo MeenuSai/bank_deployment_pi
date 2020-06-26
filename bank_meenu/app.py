@@ -30,7 +30,7 @@ def do_admin_login():
 @app.route('/newgoldloanpage',methods=['GET','POST'])
 def newgoldloadpage():
     render_template('newGoldLoan.html')
-    cus_name = request.form['name']
+#     cus_name = request.form['name']
     cus_phno = request.form['mobile_number']
     cus_interest = int(request.form['weight'])*3
     cus_address = request.form['address']
