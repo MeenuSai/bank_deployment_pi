@@ -41,7 +41,10 @@ def newgoldloadpage():
         conn.commit()
         conn.close()
         flash('Saved Successfully')
-        return redirect(url_for('mainPage'))
+        
+        entrydate = cur.execute("select entrydate personal_details where name="viki" ")
+                           
+        return redirect(url_for('mainPage'),content = entrydate)
     else:
         return render_template('newGoldLoan.html')
 
