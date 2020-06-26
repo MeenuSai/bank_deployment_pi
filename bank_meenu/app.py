@@ -29,12 +29,14 @@ def do_admin_login():
     
 @app.route('/newgoldloanpage',methods=['GET','POST'])
 def newgoldloadpage():
-    render_template('newGoldLoan.html')
-#     cus_name = request.form['name']
-    cus_phno = request.form['mobile_number']
-    cus_interest = int(request.form['weight'])*3
-    cus_address = request.form['address']
-
+    if request.method == 'POST': 
+        cus_name = request.form['name']
+        cus_phno = request.form['mobile_number']
+        cus_interest = int(request.form['weight'])*3
+        cus_address = request.form['address']
+        return redirect(url_for('newgoldloanpage'))
+    else:
+        return render_template('newGoldLoan.html')
 
 #     try:
     data={'name':cus_name,'mobile_number':cus_phno,'weight':cus_interest,'address':cus_address}    
