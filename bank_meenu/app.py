@@ -42,7 +42,7 @@ def newgoldloadpage():
         conn.close()
         flash('Saved Successfully')
         
-        entrydate = cur.execute("select entrydate personal_details where name="viki" ")
+        entrydate = cur.execute("select entrydate personal_details where name='viki' ")
                            
         return redirect(url_for('mainPage'),content = entrydate)
     else:
