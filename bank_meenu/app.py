@@ -46,7 +46,7 @@ def newgoldloadpage():
         conn =pymysql.connect(database="bank",user="admin",password="admin",host="localhost")
         cur=conn.cursor()
         cur.execute('SELECT entrydate FROM `personal_details` WHERE name="viki"')
-        entrydate=cur.fetchone()[0].srtftime()
+        entrydate=cur.fetchone()[0].timestamp()
         return render_template('newGoldLoan.html',content = entrydate)
 
 if __name__ == "__main__":
