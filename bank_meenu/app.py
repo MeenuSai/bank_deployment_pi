@@ -26,6 +26,9 @@ def do_admin_login():
         flash('Wrong Password!')
         #return redirect(url_for('home'))
         return home()
+@app.route('/newgoldloanpage')
+def newgoldloadpage():
+    return render_template('newGoldLoan.html')
 
 @app.route('/newgoldloan',methods=['GET','POST'])
 def newgoldloan():
@@ -44,7 +47,7 @@ def newgoldloan():
     conn.commit()
     conn.close()
     flash('Saved Successfully')
-    return render_template("mainPage")
+    return render_template("newgoldloanpage")
 
 
 if __name__ == "__main__":
