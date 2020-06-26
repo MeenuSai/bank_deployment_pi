@@ -1,7 +1,7 @@
 #!/usr/bin/python
 from flask import Flask
 from flask import Flask, flash, redirect, render_template, request, session, abort, url_for
-import os,pymysql,time
+import os,pymysql,time,datetime
 
 app = Flask(__name__)
 
@@ -46,7 +46,7 @@ def newgoldloadpage():
         conn =pymysql.connect(database="bank",user="admin",password="admin",host="localhost")
         cur=conn.cursor()
         cur.execute('SELECT entrydate FROM `personal_details` WHERE name="viki"')
-        entrydate=cur.fetchone().strftime(f)
+        entrydate=cur.fetchone().timestamp()
         return render_template('newGoldLoan.html',content = entrydate)
 
 if __name__ == "__main__":
